@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteRule ^$                    view_index.php [NC,L]
+RewriteRule ^flights.php$         view_flights.php [NC,L]
+RewriteRule ^style.css$           css_style.css [NC,L]
+RewriteRule ^app.js$              js_app.js [NC,L]
+RewriteRule ^validator.js$        js_validator.js [NC,L]
+RewriteRule ^login.js$            js_login.js [NC,L]
+RewriteRule ^trips$               view_trips.php [NC,L]
+RewriteRule ^bookings$            view_bookings.php [NC,L]
+RewriteRule ^sign-up$             view_sign_up.php [NC,L]
+RewriteRule ^admin$               view_admin.php [NC,L]
+RewriteRule ^logout$              bridge_logout.php [NC,L]
+RewriteRule ^signup.js$           js_signup.js [NC,L]
+RewriteRule ^upload-image$        view_upload_image.php [NC,L]
+RewriteRule ^get-flights.js$      js_get_flights.js [NC,L]

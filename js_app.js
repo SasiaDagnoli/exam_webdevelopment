@@ -47,3 +47,18 @@ function setActiveClass() {
 function openChangeLanguage() {
   document.querySelector("#change-language").style.display = "flex";
 }
+
+async function deleteFlight() {
+  const frm = event.target.form;
+  const conn = await fetch("api-delete-flights.php", {
+    method: "POST",
+    body: new FormData(frm),
+  });
+  const data = await conn.json();
+  if (!conn.ok) {
+    console.log(data);
+    return;
+  }
+  console.log(data);
+  frm.remove();
+}

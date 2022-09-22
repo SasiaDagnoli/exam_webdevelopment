@@ -17,7 +17,7 @@ try {
     //Success
     $db = new PDO('sqlite:'.__DIR__.'/momondo.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $q = $db->prepare('DELETE FROM flights WHERE id = :id'); 
+    $q = $db->prepare('DELETE FROM table_flights WHERE flight_id = :id'); 
     $q->bindValue(':id', $_POST['flight_id']);
     $q->execute();
     echo json_encode(['info' => 'flight deleted', 'flight_id' => $_POST['flight_id']]);

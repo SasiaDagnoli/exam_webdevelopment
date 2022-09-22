@@ -12,7 +12,7 @@ require_once __DIR__.'/dictionary.php';
             <p class="mt1"><?= $dictionary[$language.'_trips-text']  ?></p>
             <div class="trips-buttons mt1">
                 <button onclick="openLoginModal()" class="trips-sign-in-button"><?= $dictionary[$language.'_trips-signin-btn']  ?></button>
-                <a href="<?= "bookings?language=".$language ?>"><button class="trips-find-bookings"><?= $dictionary[$language.'_trips-find-bookings-btn']  ?></button></a>
+                <a href="<?= "bookings/".$language ?>"><button class="trips-find-bookings"><?= $dictionary[$language.'_trips-find-bookings-btn']  ?></button></a>
             </div>
         </div>
         <div></div>

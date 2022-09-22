@@ -1,4 +1,5 @@
 <?php 
+require_once __DIR__.'/_x.php';
 require_once __DIR__.'/dictionary.php';
 ?>
 <div id="login-modal-container">
@@ -24,8 +25,15 @@ require_once __DIR__.'/dictionary.php';
             <div onclick="closeLoginModal()" class="login-close">X</div>
         </div>
         <h2>What's your email address?</h2>
-        <form class="mt1" onsubmit="displayPasswordModal(); return false">
-            <input id="email-value" type="text" placeholder="Email address">
+        <form id="email-login" class="mt1" onsubmit="validateLoginEmail(login); return false">
+            <input
+            name="email"
+            onfocus="clearInput()" 
+            data-validate-login="email"
+            id="email-value" 
+            type="text" 
+            placeholder="Email address">
+            <p class="not-correct" style="display: none;">Please enter a valid E-mail</p>
             <button>Continue</button>
         </form>
     </div>
@@ -38,10 +46,19 @@ require_once __DIR__.'/dictionary.php';
             <div onclick="closeLoginModal()" class="login-close">X</div>
         </div>
         <h2>Enter your password</h2>
-        <p>Please enter your momondo password for TODO: EMAIL</p>
-        <form class="mt1" action="bridge_login.php" method="POST">
+        <p class="enter-password-for-email"></p>
+        <form id="password-login" class="mt1" method="POST" onsubmit="validateLoginPassword(password); return false">
             <input id="email-value-password-modal" type="text" name="email" style="display: none">
-            <input name="password" type="password" placeholder="Password">
+            <input 
+            onfocus="clearInput()"
+            data-validate-login="str" 
+            data-min="<?= _PASSWORD_MIN_LEN ?>"
+            data-max="<?= _PASSWORD_MAX_LEN ?>"
+            maxlength="<?= _PASSWORD_MAX_LEN ?>"
+            name="password" 
+            type="password" 
+            placeholder="Password">
+            <p class="not-correct" style="display: none;">Wrong password</p>
             <p>Forgot password?</p>
             <button>Log in</button>
         </form>

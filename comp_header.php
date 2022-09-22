@@ -8,6 +8,7 @@ require_once __DIR__.'/dictionary.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="http://localhost">
     <title>
         <?= 
             $_title ?? 'Momondo'
@@ -21,10 +22,10 @@ require_once __DIR__.'/dictionary.php';
         <div class="nav">
         <div id="nav-logo-and-menu">
             <p id="burger-menu">☰</p>
-            <a href="<?= "/?language=".$language ?>"><img id="nav-logo" src="/images/momondo_logo.png" alt="Momondo Logo"></a>
+            <a href="<?= "".$language ?>"><img id="nav-logo" src="/images/momondo_logo.png" alt="Momondo Logo"></a>
         </div>
         <div id="nav-links">
-            <a class="hover-orange" href="<?= "trips?language=".$language ?>">Trips</a> 
+            <a class="hover-orange" href="<?= "trips/".$language ?>">Trips</a> 
             <?php 
             if(!$_SESSION) {
             ?>
@@ -35,7 +36,8 @@ require_once __DIR__.'/dictionary.php';
             <?php 
             if($_SESSION) {
             ?>
-                <a class="nav-logout" href="<?= "logout?language=".$language ?>"><?= $dictionary[$language.'_nav-logout'] ?></a> 
+                <a class="nav-logout" href="<?= "logout/".$language ?>"><?= $dictionary[$language.'_nav-logout'] ?></a>
+                <a class="nav-logout" href="admin">Admin</a> 
             <?php 
             }
             ?>
@@ -67,21 +69,21 @@ require_once __DIR__.'/dictionary.php';
             <?php 
             if($language != 'en') {
             ?>
-                <a href="?language=en">🇬🇧</a>
+                <a href="/en">🇬🇧</a>
             <?php
             }
             ?>
             <?php 
             if($language != 'dk') {
             ?>
-                <a href="?language=dk">🇩🇰</a>
+                <a href="/dk">🇩🇰</a>
             <?php
             }
             ?>
             <?php 
             if($language != 'it') {
             ?>
-                <a href="?language=it">🇮🇹</a>
+                <a href="/it">🇮🇹</a>
             <?php
             }
             ?>

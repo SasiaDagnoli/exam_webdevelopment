@@ -21,18 +21,22 @@ try {
 ?>
 
 <main>
+
+    <div id="delete-flights">
+        <h1>Delete Flights</h1>
 <?php
         foreach($flights as $flight) {
         ?>
         <form onsubmit="return false;">
-            <div>
-                <img src="" alt="the image">
-                <span><?= $flight['from_city'] ?></span>
-                <span><?= $flight['to_city'] ?></span>
-                    <input type="text" value="<?= $flight['id'] ?>" name="flight_id" style="display: none;">
-                    <button onclick="deleteFlight()">🗑️ <?= $dictionary[$language.'_delete'] ?></button>
+            <div class="delete-flight">
+                <!-- <img src="" alt="the image"> -->
+                    <span><?= $flight['departure_city'] ?></span>
+                    <span><?= $flight['arrival_city'] ?></span>
+                    <input type="text" value="<?= $flight['flight_id'] ?>" name="flight_id" style="display: none;">
+                    <button onclick="deleteFlight()">🗑️</button>
             </div>
         </form>
+        </div>
         <?php
         }
         ?>

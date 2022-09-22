@@ -14,12 +14,8 @@ require_once __DIR__.'/_x.php';
             <input 
                 id="from-input"
                 name="city_name_from"
-                data-validate="str" 
-                data-min="<?= _CITY_NAME_MIN_LEN ?>"
-                data-max="<?= _CITY_NAME_MAX_LEN ?>"
                 type="text" 
                 placeholder="From?"
-                minlength="<?= _CITY_NAME_MIN_LEN ?>"
                 onblur="hideFromResults()"
                 onfocus="showFromResults()"
             >

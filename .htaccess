@@ -3,7 +3,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
 RewriteRule ^$                    view_index.php [NC,L]
-RewriteRule ^flights.php$         view_flights.php [NC,L]
 RewriteRule ^style.css$           css_style.css [NC,L]
 RewriteRule ^app.js$              js_app.js [NC,L]
 RewriteRule ^validator.js$        js_validator.js [NC,L]
@@ -16,3 +15,9 @@ RewriteRule ^logout$              bridge_logout.php [NC,L]
 RewriteRule ^signup.js$           js_signup.js [NC,L]
 RewriteRule ^upload-image$        view_upload_image.php [NC,L]
 RewriteRule ^get-flights.js$      js_get_flights.js [NC,L]
+
+RewriteRule ^bookings/(\w+)$      view_bookings.php?language=$1 [NC,L]
+RewriteRule ^trips/(\w+)$         view_trips.php?language=$1 [NC,L]
+RewriteRule ^logout/(\w+)$        bridge_logout.php?language=$1 [NC,L]
+RewriteRule ^(\w+)$               view_index.php?language=$1 [NC,L]
+RewriteRule ^admin/(\w+)$         view_admin.php?language=$1 [NC,L]

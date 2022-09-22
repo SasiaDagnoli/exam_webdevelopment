@@ -578,6 +578,19 @@ input, button {
     font-size: 16px;
 }
 
+.delete-flight button {
+    background-color: transparent;
+}
+
+.delete-flight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 footer {
     background-color: #130026;
     padding-bottom: 2.5rem;

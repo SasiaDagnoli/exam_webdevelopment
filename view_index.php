@@ -41,19 +41,21 @@ require_once __DIR__.'/_x.php';
         </div>
         <button class="flight-search-button mt1">Search</button>
     </form>
+
+    
             <div id="from-results-container">
                 <div class="search">
                     <input id="from-input-mobile" type="text" placeholder="From?" oninput="showFromResultsMobile()">
                     <div class="closeFromSearch">X</div>
                 </div>
-                <div id="from-results" class="mt1"></div>
+                <div id="from-results"></div>
             </div> 
             <div id="to-results-container">
                 <div class="search">
                     <input id="to-input-mobile" type="text" placeholder="To?" oninput="showToResultsMobile()">
                     <div class="closeToSearch">X</div>
                 </div>
-                <div id="to-results" class="mt1"></div>
+                <div id="to-results"></div>
             </div>
 
     <h2 class="pt4 width-container"><?= $dictionary[$language.'_choose'] ?></h2>

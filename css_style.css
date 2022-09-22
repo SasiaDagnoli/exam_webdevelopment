@@ -308,10 +308,17 @@ input, button {
     color: black;
 }
 
+#from-results img, #to-results img {
+    width: 20%;
+    border-radius: 8px;
+}
+
 .from-city, .to-city {
     display: flex;
     align-items: center;
     cursor: pointer;
+    gap: 1rem;
+    padding: 0.5rem;
 }
 
 .from-city *, .to-city * {
@@ -777,6 +784,8 @@ footer li:hover {
         left: 0px;
         box-shadow: 0 10px 20px rgb(21 1 39 / 10%), 0 3px 6px rgb(21 1 39 / 4%), 0 -3px 6px rgb(21 1 39 / 4%);
         border-radius: 8px;
+        overflow: hidden;
+        overflow-y: scroll;
     }
 
     .search {

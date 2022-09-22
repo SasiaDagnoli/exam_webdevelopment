@@ -104,7 +104,7 @@ async function getCitiesFrom() {
   dataCitiesFrom.forEach((city) => {
     let divCity = cityFromBlueprint;
     divCity = divCity.replace("#city-name#", city.city_name);
-    divCity = divCity.replace("#airport-short#", city.airport_short);
+    divCity = divCity.replace("#airport-short#", city.city_airport_abr);
     divCity = divCity.replace("#city-image#", `images/${city.city_image}`);
 
     allCities += divCity;
@@ -139,7 +139,7 @@ async function getCitiesTo() {
   dataCitiesTo.forEach((city) => {
     let divCity = cityToBlueprint;
     divCity = divCity.replace("#city-name#", city.city_name);
-    divCity = divCity.replace("#airport-short#", city.airport_short);
+    divCity = divCity.replace("#airport-short#", city.city_airport_abr);
     divCity = divCity.replace("#city-image#", `images/${city.city_image}`);
 
     allCities += divCity;

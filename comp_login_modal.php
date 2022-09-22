@@ -18,49 +18,35 @@ require_once __DIR__.'/dictionary.php';
     </div>
 </div>
 
-<div id="email-modal-container">
-    <div id="email-modal" class="width-container">
-        <div class="email-top">
+<div id="login-form-container">
+    <div id="login-form-modal" class="width-container">
+        <div class="login-form-top">
             <p class="back" onclick="backToLoginModal()">Back</p>
             <div onclick="closeLoginModal()" class="login-close">X</div>
         </div>
-        <h2>What's your email address?</h2>
-        <form id="email-login" class="mt1" onsubmit="validateLoginEmail(login); return false">
-            <input
-            name="email"
-            onfocus="clearInput()" 
-            data-validate-login="email"
-            id="email-value" 
-            type="text" 
-            placeholder="Email address">
-            <p class="not-correct" style="display: none;">Please enter a valid E-mail</p>
-            <button>Continue</button>
-        </form>
-    </div>
-</div>
-
-<div id="password-modal-container">
-    <div id="password-modal" class="width-container">
-        <div class="password-top">
-            <p class="back" onclick="backToEmailModal()">Back</p>
-            <div onclick="closeLoginModal()" class="login-close">X</div>
-        </div>
-        <h2>Enter your password</h2>
-        <p class="enter-password-for-email"></p>
-        <form id="password-login" class="mt1" method="POST" onsubmit="validateLoginPassword(password); return false">
-            <input id="email-value-password-modal" type="text" name="email" style="display: none">
-            <input 
-            onfocus="clearInput()"
-            data-validate-login="str" 
-            data-min="<?= _PASSWORD_MIN_LEN ?>"
-            data-max="<?= _PASSWORD_MAX_LEN ?>"
-            maxlength="<?= _PASSWORD_MAX_LEN ?>"
-            name="password" 
-            type="password" 
-            placeholder="Password">
-            <p class="not-correct" style="display: none;">Wrong password</p>
-            <p>Forgot password?</p>
-            <button>Log in</button>
+        <h2>Sign in</h2>
+        <form id="login" class="mt1" onsubmit="validateLogin(login); return false">
+            <div class="email-login">
+                <input
+                name="email"
+                data-validate-login="email"
+                id="email-value" 
+                type="text" 
+                placeholder="Email address">
+                <p class="not-correct-email" style="display: none;">Please enter a valid E-mail</p>
+            </div>
+            <div class="password-login mt1">
+                <input
+                data-validate-login="str"
+                data-min="<?= _PASSWORD_MIN_LEN ?>"
+                data-max="<?= _PASSWORD_MAX_LEN ?>"
+                maxlength="<?= _PASSWORD_MAX_LEN ?>"  
+                name="password" 
+                type="password" 
+                placeholder="Password">
+                <p class="not-correct-password" style="display: none;">Incorrect password</p>
+            </div>
+            <button class="mt1">Continue</button>
         </form>
     </div>
 </div>

@@ -1,13 +1,23 @@
 <?php
+require_once __DIR__.'/_x.php';
 $correct_email = 'a@a.com';
 $correct_password = 'password';
 
-if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    header('Location: /');
+if($_POST['email'] != $correct_email) {
+    http_response_code(400);
+    echo "FAIL";
     exit();
 }
+
+if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    header('Location: /');
+    echo "FAIL2";
+    exit();
+}
+
 if($_POST['email'] != $correct_email) {
     header('Location: /');
+    echo "FAIL3";
     exit();
 }
 
@@ -16,6 +26,9 @@ if($_POST['password'] != $correct_password) {
     exit();
 }
 
+_validate_email();
+
 session_start();
-$_SESSION['use_name'] = 'Sasia';
-header('Location: admin');
+$_SESSION['user_name'] = 'Sasia';
+
+echo json_encode(['info' => 'success']);

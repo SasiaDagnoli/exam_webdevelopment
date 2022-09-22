@@ -89,7 +89,7 @@ input {
     margin-right: auto;
 }
 
-#login-modal-container, #email-modal-container, #password-modal-container {
+#login-modal-container, #login-form-container {
     width: 100%;
     height: 100%;
     z-index: 1000;
@@ -104,7 +104,7 @@ input {
     display: none;
 }
 
-#login-modal, #email-modal, #password-modal {
+#login-modal, #login-form-modal, #password-modal {
     background-color: white;
     border-radius: 12px;
     color: black;
@@ -125,7 +125,7 @@ input {
     background-color: #e1d9e8;
 }
 
-.login-top, .email-top, .password-top {
+.login-top, .login-form-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -149,29 +149,26 @@ input {
     color: #919191;
 }
 
-#email-modal form, #password-modal form {
+#login-form-modal form {
     text-align: left;
     flex-direction: column;
     align-items: stretch;
-    gap: 1rem;
+    gap: 0;
 }
 
-#email-modal button, #password-modal button {
+#login-form-modal button {
     background: linear-gradient(135deg,#de1666 0%,#73146f 100%);
+    width: 100%;
 }
 
-#email-modal input, #password-modal input {
+#login-form-modal input {
     border: 1px solid #ededed;
+    width: 100%;
 }
 
 #password-modal-container form p {
     font-size: 13px;
     color: #007eb0;
-}
-
-#password-modal-container form p:hover {
-    cursor: pointer;
-    text-decoration: underline;
 }
 
 .back {

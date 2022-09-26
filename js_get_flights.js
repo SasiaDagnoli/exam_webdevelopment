@@ -160,3 +160,18 @@ function getInputValueTo() {
   document.querySelector("#to-results-container").style.display = "none";
   document.querySelector("#to-input").value = cityName;
 }
+
+async function flights() {
+  let searchFrom = document.querySelector("#from-input").value;
+  let searchTo = document.querySelector("#to-input").value;
+  /* const theForm = document.querySelector("#flight-search-form"); */
+  const conn = await fetch(
+    `api-validate-cities.php?city_name_from=${searchFrom}&city_name_to=${searchTo}`
+  );
+  if (!conn.ok) {
+    console.log("ups");
+    return;
+  }
+  const data = await conn.json();
+  Swal.fire("Good job!", `${data.info}`, "success");
+}

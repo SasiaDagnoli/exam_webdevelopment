@@ -1,22 +1,3 @@
-/* function validate() {
-  const txtFirstName = document.querySelector("#txt-first-name");
-  if (txtFirstName.value.length < nameMinLen) {
-    txtFirstName.style.backgroundColor = "red";
-  }
-  if (txtFirstName.value.length > nameMaxLen) {
-    txtFirstName.style.backgroundColor = "red";
-  }
-
-  const txtLastName = document.querySelector("#txt-last-name");
-  if (txtLastName.value.length < lastNameMinLen) {
-    txtLastName.style.backgroundColor = "red";
-  }
-  if (txtLastName.value.length > lastNameMaxLen) {
-    txtLastName.style.backgroundColor = "red";
-  }
-}
- */
-
 // ##############################
 function validate(callback) {
   const form = event.target;

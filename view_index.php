@@ -9,26 +9,34 @@ require_once __DIR__.'/_x.php';
 <main>
     <h1 class="pt2 width-container"><?= $dictionary[$language.'_header'] ?></h1>
 
-    <form id="flight-search-form" class="width-container" onsubmit="return false">
+    <form id="flight-search-form" class="width-container" onsubmit="validate(flights); return false">
         <div class="form-inputs mt2">
             <input 
+                data-validate="str"
+                data-min="<?= _CITY_NAME_MIN_LEN ?>"
+                data-max="<?= _CITY_NAME_MAX_LEN ?>"
                 id="from-input"
                 name="city_name_from"
                 type="text" 
                 placeholder="From?"
                 onblur="hideFromResults()"
                 onfocus="showFromResults()"
+                maxlength="<?= _CITY_NAME_MAX_LEN ?>"
             >
             <div class="form-arrows" onclick="switchCities()">
                 <i class='fas fa-exchange-alt'></i>
             </div>
             <input 
+                data-validate="str"
+                data-min="<?= _CITY_NAME_MIN_LEN ?>"
+                data-max="<?= _CITY_NAME_MAX_LEN ?>"
                 id="to-input"
                 name="city_name_to" 
                 type="text" 
                 placeholder="To?"
                 onblur="hideToResults()"
-                onfocus="showToResults()">
+                onfocus="showToResults()"
+                maxlength="<?= _CITY_NAME_MAX_LEN ?>">
             <input 
             id="to-input"
             type="text" 

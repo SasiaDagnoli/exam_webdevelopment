@@ -36,29 +36,29 @@ require_once __DIR__.'/dictionary.php';
             <?php 
             if($_SESSION) {
             ?>
-                <a class="nav-logout" href="<?= "logout/".$language ?>"><?= $dictionary[$language.'_nav-logout'] ?></a>
                 <a class="nav-logout" href="admin">Admin</a> 
+                <a class="nav-logout" href="<?= "logout/".$language ?>"><?= $dictionary[$language.'_nav-logout'] ?></a>
             <?php 
             }
             ?>
             <?php 
             if($language == 'en') {
             ?>
-                <p onclick="openChangeLanguage()">🇬🇧</p>
+                <p class="change-language" onclick="openChangeLanguage()">🇬🇧</p>
             <?php
             }
             ?>
             <?php 
             if($language == 'dk') {
             ?>
-                <p onclick="openChangeLanguage()">🇩🇰</p>
+                <p class="change-language" onclick="openChangeLanguage()">🇩🇰</p>
             <?php
             }
             ?>
             <?php 
             if($language == 'it') {
             ?>
-                <p onclick="openChangeLanguage()">🇮🇹</p>
+                <p class="change-language" onclick="openChangeLanguage()">🇮🇹</p>
             <?php
             }
             ?>

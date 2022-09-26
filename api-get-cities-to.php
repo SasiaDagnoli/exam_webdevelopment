@@ -1,19 +1,18 @@
 <?php
-require_once __DIR__.'/_x.php';
-
 try {
+    $from_city = $_GET['city_name_to'] ?? 0;
+    //Connect to the database
     $db = new PDO('sqlite:'.__DIR__.'/momondo.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $q = $db->prepare('SELECT * FROM table_cities'); 
+    //Search for the flight in the database
+    $q = $db->prepare('SELECT * FROM table_cities WHERE city_name LIKE :city_name_to');
+    $q->bindValue(':city_name_to', '%'.$from_city.'%');
     $q->execute();
+    //FETCH_ASSOC get the data as an assosiative array
     $cities = $q->fetchAll(PDO::FETCH_ASSOC);
-    //echo json_encode($flights);
+    echo json_encode($cities);
 } catch(Exception $ex) {
-    http_response_code(500);
-    echo json_encode(['info' => 'sorry went terribly wrong']);
-    exit();
+    //echo $ex;
+    http_response_code(400);
+    echo json_encode(['info' => 'Ups']);
 }
-
-_validate_city_name_to();
-
-_respond($cities, 200);

@@ -12,7 +12,6 @@ if(!ctype_digit($_POST['flight_id'])) {
     exit();
 }
 
-//TODO: Delete the flight from the database
 try {
     //Success
     $db = new PDO('sqlite:'.__DIR__.'/momondo.db');

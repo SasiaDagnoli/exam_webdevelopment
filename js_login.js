@@ -76,7 +76,10 @@ async function login() {
     body: new FormData(theForm),
   });
   if (!conn.ok) {
-    console.log("test");
+    const wrongEmail = document.querySelector("#email-value");
+    if (wrongEmail.value != "a@a.com") {
+      document.querySelector(".not-correct-email").style.display = "block";
+    }
     return;
   }
   const data = await conn.json();
@@ -91,19 +94,23 @@ function clearInputLogin() {
 
 function openLoginModal() {
   document.querySelector("#login-modal-container").style.display = "block";
+  document.querySelector("body").style.overflow = "hidden";
 }
 
 function closeLoginModal() {
   document.querySelector("#login-modal-container").style.display = "none";
   document.querySelector("#login-form-container").style.display = "none";
+  document.querySelector("body").style.overflow = "auto";
 }
 
 function displayEmailModal() {
   document.querySelector("#login-modal-container").style.display = "none";
   document.querySelector("#login-form-container").style.display = "block";
+  document.querySelector("body").style.overflow = "hidden";
 }
 
 function backToLoginModal() {
   document.querySelector("#login-modal-container").style.display = "block";
   document.querySelector("#login-form-container").style.display = "none";
+  document.querySelector("body").style.overflow = "hidden";
 }

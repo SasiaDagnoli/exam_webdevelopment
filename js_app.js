@@ -45,7 +45,8 @@ function setActiveClass() {
 }
 
 function openChangeLanguage() {
-  document.querySelector("#change-language").style.display = "flex";
+  console.log("click");
+  document.querySelector("#change-language").classList.toggle("flex");
 }
 
 async function deleteFlight() {
@@ -61,4 +62,8 @@ async function deleteFlight() {
   }
   console.log(data);
   frm.remove();
+}
+
+function changeImage() {
+  window.location.replace("upload-image");
 }

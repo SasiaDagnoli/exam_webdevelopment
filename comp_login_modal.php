@@ -50,3 +50,5 @@ require_once __DIR__.'/dictionary.php';
         </form>
     </div>
 </div>
+
+<script src="validator.js"></script>

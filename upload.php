@@ -4,8 +4,12 @@ $target_file = $target_dir . basename($_FILES['fileToUpload']['name']); //images
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION)); //png/jpg....
 $random_image_name = bin2hex(random_bytes(5));
 $random_image_name = $random_image_name.'.'.$imageFileType;
-$tmp_name = $_FILES['fileToUpload']['tmp_name'];
-move_uploaded_file($_FILES['fileToUpload']['tmp_name'], "images/$random_image_name");
+if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], "$target_dir/$random_image_name")) {
+    session_start();
+    $_SESSION['user_profile_picture'] = $random_image_name;
+    header('Location: profile');
+    exit();
+}
 
 
-//echo "<img src=images/$random_image_name>";
+

@@ -21,22 +21,23 @@ try {
 ?>
 
 <main>
-
-    <div id="delete-flights">
         <h1>Delete Flights</h1>
 <?php
         foreach($flights as $flight) {
         ?>
-        <form onsubmit="return false;">
+        <form id="delete-flights" onsubmit="return false;">
             <div class="delete-flight">
-                <!-- <img src="" alt="the image"> -->
-                    <span><?= $flight['departure_city'] ?></span>
-                    <span><?= $flight['arrival_city'] ?></span>
-                    <input type="text" value="<?= $flight['flight_id'] ?>" name="flight_id" style="display: none;">
-                    <button onclick="deleteFlight()">🗑️</button>
+                    <div class="cities">
+                        <span><?= "{$flight['departure_city']} - {$flight['arrival_city']}" ?></span>
+                        <input type="text" value="<?= $flight['flight_id'] ?>" name="flight_id" style="display: none;">
+                    </div>
+                    <div class="delete-flight-right">
+                        <p><?= $flight['flight_price'] ?></p>
+                        <p class="admin-airline"><?= $flight['airline'] ?></p>
+                        <button class="mt1" onclick="deleteFlight()">Delete Flight</button>
+                    </div>
             </div>
         </form>
-        </div>
         <?php
         }
         ?>

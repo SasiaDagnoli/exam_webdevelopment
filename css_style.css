@@ -636,6 +636,10 @@ input, button {
     cursor: pointer;
 }
 
+.delete-flights-header {
+    text-align: center;
+}
+
 .profile {
     background-color: #e1d9e8;
     color: black;
@@ -854,13 +858,20 @@ footer li:hover {
         width: 20rem;
         height: 20rem;
         position: absolute;
-        transform: translate(282px, 266px);
         top: 0px;
         left: 0px;
         box-shadow: 0 10px 20px rgb(21 1 39 / 10%), 0 3px 6px rgb(21 1 39 / 4%), 0 -3px 6px rgb(21 1 39 / 4%);
         border-radius: 8px;
         overflow: hidden;
         overflow-y: scroll;
+    }
+
+    #from-results-container {
+        transform: translate(280px, 260px);
+    }
+
+    #to-results-container {
+        transform: translate(505px, 260px);
     }
 
     .search {

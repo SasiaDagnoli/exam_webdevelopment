@@ -21,7 +21,7 @@ try {
 ?>
 
 <main>
-        <h1>Delete Flights</h1>
+        <h1 class="delete-flights-header">Delete Flights</h1>
 <?php
         foreach($flights as $flight) {
         ?>

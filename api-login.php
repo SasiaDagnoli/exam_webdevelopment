@@ -27,7 +27,7 @@ if($_POST['password'] != $correct_password) {
 }
 
 _validate_email();
-// TODO: Validate password
+_validate_password();
 
 session_start();
 $_SESSION['user_name'] = 'Sasia';
